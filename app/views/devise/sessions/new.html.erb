@@ -1,0 +1,44 @@
+<!-- <h2>Log in</h2>
+
+<%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%#= f.label :email %><br />
+    <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%#= f.label :password %><br />
+    <%#= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <%# if devise_mapping.rememberable? %>
+    <div class="field">
+      <%#= f.check_box :remember_me %>
+      <%#= f.label :remember_me %>
+    </div>
+  <%# end %>
+
+  <div class="actions">
+    <%#= f.submit "Log in" %>
+  </div>
+<%# end %>
+
+<%#= render "devise/shared/links" %> -->
+
+<!-- login section start -->
+<section class="login-wrapper">
+  <div class="container">
+    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <!-- <img class="img-responsive" alt="logo" src="/assets/logo.png"> -->
+        <h2>Masuk Sebagai <%= session[:company] ? "Perusahaan" : "Kandidat" %></h2>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-lg", placeholder: "Email" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-lg", placeholder: "Password" %>
+
+        <%= button_tag "Masuk", type: "submit", class: "btn btn-primary" %>
+        <%#= render "devise/shared/links" %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!-- login section End -->

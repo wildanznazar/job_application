@@ -1,0 +1,64 @@
+<!-- footer start -->
+<footer>
+	<div class="container">
+		<div class="col-md-4 col-sm-12">
+			<h4>Menu</h4>
+			<address>
+				<ul>
+					<li><a href="/">Beranda</a></li>
+					<% if !user_signed_in? %>
+						<% if !session[:company] %>
+							<li><a href="/browse_jobs">Pencarian Kerja</a></li>
+							<li><a href="/companies">Perusahaan</a></li>
+						<% else %>
+							<li><a href="/companies">Perusahaan</a></li>
+						<% end %>
+						<% if params[:controller] == "devise/sessions" %>
+							<li><a href="/auth/users/sign_up">Daftar</a></li>
+						<% else %>
+							<li><a href="/auth/users/sign_in">Masuk</a></li>
+						<% end %>
+					<% elsif user_signed_in? && current_user.role == CONFIG["company"] %>
+						<li><a href="/admin/job_ad">Iklan Pekerjaan Anda</a></li>
+					<% elsif user_signed_in? && current_user.role == CONFIG["user"] %>
+						<li><a href="/browse_jobs">Pencarian Kerja</a></li>
+						<li><a href="/profile">Profil Saya</a></li>
+					<% elsif current_user.role == CONFIG["admin"] %>
+						<li><a href="/admin">Admin</a></li>
+					<% end %>
+					<% if user_signed_in? %>
+						<li>
+							<%= link_to "Keluar", destroy_user_session_path, :method => :delete, data: { confirm: "Keluar?" } %>
+						</li>
+					<% end %>
+				</ul>
+			</address>
+		</div>
+
+		<div class="col-md-4 col-sm-12">
+			<h4>Kontak Detail</h4>
+			<address>
+				<ul>
+					<li><%= @setting.address %></li>
+					<li><%= @setting.email %></li>
+					<li><%= @setting.phone %></li>
+				</ul>
+			</address>
+		</div>
+
+		<div class="col-md-4 col-sm-12">
+			<h4>Hubungi Kami</h4>
+			<form>
+				<input type="text" class="form-control input-lg" placeholder="Nama">
+				<input type="text" class="form-control input-lg" placeholder="Email">
+				<textarea class="form-control" placeholder="Pesan"></textarea>
+				<button type="submit" class="btn btn-primary">Kirim</button>
+			</form>
+		</div>
+
+
+	</div>
+	<div class="copy-right">
+	 <p>&copy;Copyright 2019 <%= @setting.web_name %></p>
+	</div>
+</footer>

@@ -1,0 +1,19 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section class="main-banner" style="background:#242c36 url(/assets/slider-01.jpg) no-repeat">
+	<div class="container">
+		<div class="caption">
+			<h2>Cari Pekerjaan</h2>
+			<%= form_with(url: "/browse_jobs", method: "get", local: true) do %>
+				<fieldset>
+					<div class="col-md-10 col-sm-10 no-pad">
+					<%= text_field_tag :search, params[:search], class: 'form-control', autofocus: true, placeholder: "Posisi, Keahlian, Perusahaan" %>
+				</div>
+					<div class="col-md-2 col-sm-2 no-pad"> 
+						<%= submit_tag "Cari", class: 'btn seub-btn'%>
+					<!--<%= link_to 'Cari', browse_jobs_path, class: 'btn seub-btn' %>-->
+				</div>
+				</fieldset>
+			<% end %>
+		</div>
+	</div>
+</section>

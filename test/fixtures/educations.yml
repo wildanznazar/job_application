@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  institute: MyString
+  qualification: MyString
+  field_of_study: MyString
+  grade: MyString
+  description: MyText
+
+two:
+  profile: two
+  institute: MyString
+  qualification: MyString
+  field_of_study: MyString
+  grade: MyString
+  description: MyText

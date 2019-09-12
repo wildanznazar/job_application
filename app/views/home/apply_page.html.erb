@@ -1,0 +1,38 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<% profile = current_user.profile %>
+<section class="profile-detail">
+	<div class="container">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="basic-information-custom">
+					<div class="media">
+						<div class="media-left">
+							<img src="<%= profile.image.url %>%>" alt="Avatar" class="media-object">
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading" style="margin-left: 0px; padding-top: 0px;"><%= profile.name %></h4>
+							<p><%= currency(profile.expected_salary)  %> | <%= profile.email %> | <%= profile.phone %></p>
+						</div>
+					</div>
+					<hr>
+					<%= form_with(model: @applicant, url: "/apply", method: "post", local: true) do |f| %>
+						<%= f.hidden_field :job_ad_id %>
+						<%= f.hidden_field :user_id %>
+						<%= f.hidden_field :company_id %>
+						<%= f.hidden_field :status %>
+						<div class="col-xs-12" style="padding: 0px;">
+						  <div class="form-group">
+							  <%= f.label :applicaiton, "Lamaran Singkat Anda" %>
+							  <%= f.text_area :applicaiton, autofocus: true, class: "form-control", rows: "5", placeholder: "Beritahukan kepada perusahaan mengapa Anda cocok untuk lamaran ini...", required: true %>
+							</div>
+							<div>
+								<%= button_tag 'Kirim Lamaran Anda', type: "submit", class: 'btn btn-success btn-apply', style: "margin-left: 10px;" %>
+								<%= link_to 'Batal' , job_detail_path(id: @applicant.job_ad_id), {class: 'btn btn-default btn-apply'} %>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

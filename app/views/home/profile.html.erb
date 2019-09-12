@@ -1,0 +1,144 @@
+<section class="profile-detail">
+	<div class="container">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="basic-information">
+					<div style="position: absolute; right: 5px; top: 5px;">
+						<%= link_to "Unduh Resume / CV", @profile.resume.url, class: "btn btn-success", target: "_blank" %>
+						<% if current_user.role == CONFIG["user"] %>
+							<%= link_to "Edit", "/admin/profile/#{@profile.id}/edit", class: "btn btn-default" %>
+						<% end %>
+					</div>
+					<div class="col-md-3 col-sm-3 avatar" style="padding-bottom: 10px;">
+						<%= image_tag @profile.image.url(:medium) %>
+					</div>
+					<div class="col-md-9 col-sm-9">
+						<div class="profile-content">
+							<h2><%= @profile.name %> </h2>
+							<ul class="information">
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Jenis Kelamin</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @profile.gender %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Email</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @profile.email %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Telepon</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @profile.phone %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Alamat</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @profile.address %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Tgl. Lahir</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @profile.dob.strftime("%d %B %Y") %></div>
+								</div>
+							</ul>
+						</div>
+					</div>
+
+					<ul class="social-custom">
+					</ul>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-user fa-fw"></i> Tentang Saya
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<%= simple_format @profile.description %>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-leaf fa-fw"></i> Pendidikan:
+						</div>
+						<% @profile.educations.each do |education| %>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<h2><%= education.qualification %> </h2>
+							<ul class="information">
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Universitas / Sekolah</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= education.institute %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Pendidikan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= education.qualification %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Jurusan / Fakultas</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= education.field_of_study %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Nilai</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= education.grade %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Tgl. Kelulusan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= education.graduation_date.strftime("%d %B %Y") %></div>
+								</div>
+							</ul>
+						</div>
+						<% end %>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-leaf fa-fw"></i> Pengalaman Kerja:
+						</div>
+						<!-- /.panel-heading -->
+						<% @profile.experiences.each do |experience| %>
+						<div class="panel-body">
+							<h2><%= experience.position_title %> </h2>
+							<ul class="information">
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Nama Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= experience.company_name %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Industri Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= experience.industry %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Tgl. Bergabung</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= experience.join_start.strftime("%d %B %Y") %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Tgl. Keluar</b></div>
+									<div class="col-xs-1">:</div>
+									<% if experience.present? %>
+										<div class="col-xs-6">Masih Bekerja</div>
+									<% else %>
+										<div class="col-xs-6"><%= experience.join_end.strftime("%d %B %Y") %></div>
+									<% end %>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Gaji per Bulan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= currency(experience.monthly_aslary) %></div>
+								</div>
+							</ul>
+						</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+

@@ -1,0 +1,296 @@
+.field_with_errors {
+  padding: 2px;
+  background-color: #d73925;
+}
+
+#error_explanation {
+  border: 2px solid #d73925;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+.avatar img{
+	width: 65%;
+	margin: 20px 0px 20px 50px;
+
+}
+
+.media-object {
+	width: 64px;
+	height: 64px;
+}
+
+.jobs {
+	padding: 0px;
+}
+
+.companies {
+  margin-bottom: 30px;
+}
+
+.profile-detail {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.social-custom{
+margin:0;
+padding:0px 0;
+display:inline-block;
+width:100%;
+}
+
+/*-------------------Banner Start-----------------------*/
+.main-banner-custom{
+	background-size:cover !important;
+	background-position:center !important;
+	/*padding:14% 0;*/
+	position:relative;
+	text-align:center;
+	color:#ffffff;
+	margin:0;
+	padding: 20px 0px 20px 0px;
+}
+.main-banner-custom .caption{
+	position:relative;
+}
+.main-banner-custom h2{
+	color:#ffff;
+	font-weight:400;
+	display: block;
+	margin-bottom: 25px;
+	padding-top: 10px;
+}
+.main-banner-custom:before{
+	content:"";
+	display:block;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	position:absolute;
+	background:rgba(12,20,25,0.3);
+}
+.main-banner-custom fieldset {
+	margin-top: 52px;
+	background: rgba(255,255,255,0.3);
+	padding: 20px 20px 10px 20px;
+}
+.main-banner-custom fieldset .no-pad{
+	margin:0;
+	padding:0;
+}
+.main-banner-custom fieldset select.selectpicker, .main-banner-custom fieldset .form-control, .main-banner-custom fieldset .seub-btn {
+	width: 100%;
+	color: #6b797c;
+	padding: 19px 15px;
+	border: none;
+	border-radius: 0;
+	height: auto;
+	line-height: 1.5;
+	font-size: 16px;
+	height:60px;
+}
+.main-banner-custom fieldset select.selectpicker:focus, .main-banner-custom fieldset .form-control:focus, .main-banner-custom fieldset .seub-btn:focus{
+	outline:none;
+}
+.main-banner-custom fieldset .border-right{
+	border-right:1px solid rgba(107,121,124,0.3) !important;
+}
+.main-banner-custom .btn.seub-btn{
+	background:#2d98d4 ;
+	color:#ffffff;
+	text-transform:uppercase;
+	font-size:18px;
+	text-shadow:none;
+	line-height: 1.2;
+}
+
+/*-------------------Bagian Detail-----------------------*/
+
+.basic-information-custom{
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    padding: 30px 30px 20px;
+    -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
+	border: 1px solid #eaecf1;
+	display: table;
+    width: 100%;
+}
+
+.basic-information h2{
+margin:0;
+margin-bottom:10px;
+color:#404b4d;
+}
+.basic-information-custom h2 span{
+	color:#2d98d4;
+	font-size:15.5px;
+	display:block;
+}
+
+.basic-information-custom p{
+	font-size:17px;
+}
+
+
+.information-custom{
+	margin:0;
+	padding:10px;
+}
+
+.information-custom li{
+	display:block;
+	padding:10px 0;
+	font-size:15.5;
+	list-style:none;
+	border-bottom:1px solid rgba(107,121,124,0.1);
+}
+.information-custom li span{
+	display: inline-block;
+	font-weight:bold;
+	width:200px;
+}
+
+.basic-information-custom h2{
+	margin:0;
+	margin: 0px 0px 0px 15px;
+	color:#404b4d;
+}
+.basic-information-custom h4 {
+	padding-top: 10px;
+	color:#242c36;
+	margin: 0px 0px 0px 15px;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+	.information-custom span{
+		padding-top: auto;
+	}
+
+	.information-custom table, {
+		width: 100%;
+	}
+
+	.information-custom th, td {
+		vertical-align: text-top;
+	  	padding: 0px 50px 20px 0px;
+ 	 	/*border-bottom:1px solid rgba(107,121,124,0.1);*/
+
+	}
+
+	.information-custom th {
+	  text-align: left;
+	}
+
+	.panel-body ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 0px;
+	}
+
+
+@media only screen and (min-width: 768px){
+	.main-banner-custom h2{
+	font-size:82px;
+}
+}
+
+@media (max-width: 992px){
+	nav.navbar .navbar-brand img.logo {
+    width: 150px;
+    margin-top: -29px;
+  }
+
+  .information-custom li span{
+	display: inline-block;
+	font-weight:bold;
+	width:100px;
+
+}
+
+.information li span{
+	display: inline-block;
+	font-weight:bold;
+	width:120px;
+
+}
+
+.information-custom{
+	margin:0;
+	padding:0px 10px 0px 10px;
+}
+
+}
+
+@media (min-width: 1024px) {
+	nav.navbar .navbar-brand img.logo {
+    position: relative;
+    max-width: 100%;
+    top: -34px;
+	}
+
+	nav.navbar.sticked .navbar-brand img.logo {
+    position: relative;
+    max-width: 100%;
+    top: -34px;
+	}
+
+
+
+
+	.column {
+  	float: left;
+  	width: 50%;
+  	padding: 10px;
+ 	height: 50px; /* Should be removed. Only for demonstration */
+	}
+	.column1 {
+	  float: left;
+	  width: 50%;
+	  padding: 10px;
+	  height: 50px; /* Should be removed. Only for demonstration */
+	}
+
+	/* Clear floats after the columns */
+		.row:after {
+	 	content: "";
+	  	display: table;
+	 	clear: both;
+		}
+}
+
+footer button.btn.btn-primary {
+	float: right;
+}
+
+.btn-apply {
+	float: right;
+	border-radius: 2px;
+  min-width: 120px;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}

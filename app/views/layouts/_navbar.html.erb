@@ -1,0 +1,55 @@
+<!-- Navigation Start  -->
+<nav class="navbar navbar-default navbar-sticky bootsnav">
+
+	<div class="container">
+		<!-- Start Header Navigation -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+				<i class="fa fa-bars"></i>
+			</button>
+			<a class="navbar-brand" href="/"><img src="/assets/logo.png" class="logo" alt=""></a>
+		</div>
+		<!-- End Header Navigation -->
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="navbar-menu">
+			<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+					<li><a href="/">Beranda</a></li>
+					<% if !user_signed_in? %>
+						<% if !session[:company] %>
+							<li><a href="/browse_jobs">Pencarian Kerja</a></li>
+							<li><a href="/companies">Perusahaan</a></li>
+						<% else %>
+							<li><a href="/companies">Perusahaan</a></li>
+						<% end %>
+						<% if params[:controller] == "devise/sessions" %>
+							<li><a href="/auth/users/sign_up">Daftar</a></li>
+						<% else %>
+							<li><a href="/auth/users/sign_in">Masuk</a></li>
+						<% end %>
+					<% elsif user_signed_in? && current_user.role == CONFIG["company"] %>
+						<li><a href="/admin/job_ad">Iklan Pekerjaan Anda</a></li>
+						<li><a href="/admin/user/<%= current_user.id %>/edit">Edit Perusahaan</a></li>
+					<% elsif user_signed_in? && current_user.role == CONFIG["user"] %>
+						<li><a href="/browse_jobs">Pencarian Kerja</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil Saya</a>
+							<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
+								<li class="active"><a href="/profile">Lihat Profil</a></li>
+								<li class="active"><a href="/admin/profile/<%= current_user.profile.id %>/edit">Edit Profil</a></li>
+								<li class="active"><a href="/admin/applicant">Lamaran Pekerjaan</a></li>
+							</ul>
+						</li>
+					<% elsif current_user.role == CONFIG["admin"] %>
+						<li><a href="/admin">Admin</a></li>
+					<% end %>
+					<% if user_signed_in? %>
+						<li>
+							<%= link_to "Keluar", destroy_user_session_path, :method => :delete, data: { confirm: "Keluar?" } %>
+						</li>
+					<% end %>
+				</ul>
+		</div><!-- /.navbar-collapse -->
+	</div>
+</nav>
+<!-- Navigation End  -->

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  position_title: MyString
+  position_level: MyString
+  employment_type: MyString
+  job_specialization: MyString
+  work_location: MyString
+  monthly_salary: 
+  education_level: MyString
+  field_of_studies: MyString
+  years_of_experience: MyString
+  skills: MyString
+  language: MyString
+  job_description: MyText
+
+two:
+  user: two
+  position_title: MyString
+  position_level: MyString
+  employment_type: MyString
+  job_specialization: MyString
+  work_location: MyString
+  monthly_salary: 
+  education_level: MyString
+  field_of_studies: MyString
+  years_of_experience: MyString
+  skills: MyString
+  language: MyString
+  job_description: MyText

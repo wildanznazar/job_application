@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: 
+  position_title: MyString
+  company_name: MyString
+  join_start: 2019-08-29
+  join_end: 2019-08-29
+  role: MyString
+  industry: MyString
+  monthly_aslary: 
+  description: MyText
+
+two:
+  profile: 
+  position_title: MyString
+  company_name: MyString
+  join_start: 2019-08-29
+  join_end: 2019-08-29
+  role: MyString
+  industry: MyString
+  monthly_aslary: 
+  description: MyText

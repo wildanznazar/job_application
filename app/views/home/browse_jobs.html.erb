@@ -1,0 +1,115 @@
+<section class="main-banner-custom" style="background:#242c36 url(/assets/slider-01.jpg) no-repeat">
+	<div class="container">
+		<div class="caption">
+			<h2>Cari Pekerjaan</h2>
+			<form id="form1">
+				<div id="type"></div>
+				<fieldset>
+					<div class="col-md-10 col-sm-10 no-pad">
+						<!--<input type="text" class="form-control border-right" placeholder="Posisi, Keahlian, Perusahaan" />-->
+						<%= text_field_tag :search, params[:search], class: 'form-control', autofocus: true, placeholder: "Posisi, Keahlian, Perusahaan" %>
+
+					</div>
+					<div class="col-md-2 col-sm-2 no-pad">
+						<%= submit_tag "Cari", class: 'btn seub-btn'%>
+						<!--<input type="submit" class="btn seub-btn" value="Cari" />-->
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+<section class="jobs">
+	<div class="container">
+		<div class="row top-pad">
+			<div class="filter">
+				<div class="col-md-2 col-sm-3">
+					<p>Jenis Pekerjaan:</p>
+				</div>
+
+				<div class="col-md-10 col-sm-9 pull-right">
+					<ul class="filter-list">
+						<li>
+							<input id="Clear" class="checkbox-custom" name="Clear" type="checkbox"  onclick="submit_type(this.id)" <%= !@type.present? ? 'checked' : '' %>>
+							<label for="Clear" class="part-time checkbox-custom-label">Semua</label>
+						</li>
+
+						<li>
+							<input id="Kontrak" class="checkbox-custom" name="Kontrak" type="checkbox"  onclick="submit_type(this.id)" <%= (@type.include?'Kontrak') ? 'checked' : '' %>>
+							<label for="Kontrak" class="part-time checkbox-custom-label">Kontrak</label>
+						</li>
+
+						<li>
+							<input id="Full-Time" class="checkbox-custom" name="Full-Time" type="checkbox" onclick="submit_type(this.id)" <%= (@type.include?'Full-Time') ? 'checked' : '' %>>
+							<label for="Full-Time" class="part-time checkbox-custom-label">Full-Time</label>
+						</li>
+
+						<li>
+							<input id="Magang" class="checkbox-custom" name="Magang" type="checkbox" onclick="submit_type(this.id)" <%= (@type.include?'Magang') ? 'checked' : '' %>>
+							<label for="Magang" class="part-time checkbox-custom-label">Magang</label>
+						</li>
+
+						<li>
+							<input id="Part-Time" class="checkbox-custom" name="Part-Time" type="checkbox" onclick="submit_type(this.id)" <%= (@type.include?'Part-Time') ? 'checked' : '' %>>
+							<label for="Part-Time" class="part-time checkbox-custom-label">Part-Time</label>
+						</li>
+
+						<li>
+							<input id="Sementara" class="checkbox-custom" name="Sementara" type="checkbox" onclick="submit_type(this.id)" <%= (@type.include?'Sementara') ? 'checked' : '' %>>
+							<label for="Sementara" class="part-time checkbox-custom-label">Sementara</label>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="companies">
+			<% @browse_jobs.each do |browse_job| %>
+			<div class="company-list">
+				<div class="row">
+					<div class="col-md-10 col-sm-10">
+						<div class="company-content">
+							<h3><%= browse_job.position_title %></h3>
+							<p><span class="company-name"><i class="fa fa-building"></i><%= browse_job.user.company_name %></span><span class="company-location"><i class="fa fa-map-marker"></i> <%= browse_job.work_location %> </span><span class="package"><i class="fa fa-money"></i><%= currency(browse_job.monthly_salary) %></span></p>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2">
+						<!--<button type="submit" class="btn view-job" name="View Job">View Job</button>-->
+						<%= link_to 'Lihat Pekerjaan' , job_detail_path(id: browse_job.id), {class: 'btn view-job'} %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+
+			<div class="row">
+				<center><%= paginate @browse_jobs %></center>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		<% if @type.include?"Clear" %>
+			('#type').clear();
+			window.history(null,null,'/browse_job')
+		<% else %>
+		  <% @type.each do |item| %>
+		  	$('#type').append('<input type="hidden" id="type_<%= item %>" name="type[]" value="<%= item %>">');
+		  <% end %>
+		<% end %>
+	});
+
+	function submit_type(value) {
+		if(value!=='Clear') {
+			var el =document.getElementById("type_"+value);
+
+			if (typeof(el) === 'undefined' || el === null){
+	      $('#type').append('<input type="hidden" id="type_'+value+'" name="type[]" value="'+value+'">');  
+	    }
+		} else {
+			$('#type').append('<input type="hidden" id="type_'+value+'" name="type[]" value="'+value+'">');
+		}
+		$("#form1").submit();
+	}
+</script>

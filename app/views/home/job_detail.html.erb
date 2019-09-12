@@ -1,0 +1,117 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<section class="profile-detail">
+	<div class="container">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="basic-information-custom">
+					<div class="col-md-36 col-sm-36">
+						<h2><%= @job_detail.position_title %> </h2>
+						<!-- <h4><%= @job_detail.user.company_name %> </h4> -->
+						<div class="panel-body">
+							<ul class="information">
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Nama Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.company_name %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Alamat Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.address %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Website Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.website %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Email Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.company_email %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Telepon Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.phone %></div>
+								</div>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-user fa-fw"></i> Deskripsi<br>
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<p><%= simple_format @job_detail.job_description %></p>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-leaf fa-fw"></i> Kualifikasi
+						</div>
+						<div class="panel-body">
+							<ul class="information">
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Posisi</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.position_title %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Level Posisi</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.position_level %></div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Pekerjaan Spesialis</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.job_specialization %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Tipe Karyawan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.employment_type %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Lokasi</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.work_location %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Gaji Bulanan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.monthly_salary %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Jenis Pendidikan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.education_level %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Jurusan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.field_of_studies %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Pengalaman Kerja</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.years_of_experience %></div>
+								</div>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<% if !user_signed_in? %>
+							<%= link_to 'Kirim Lamaran Pekerjaan' , "javascript:void(0)", {class: 'btn btn-success btn-apply', onclick: "alert('Silahkan Masuk / Daftar Untuk Melamar Pekerjaan Yang Anda Inginkan.')"} %>
+						<% else %>
+							<%= link_to 'Kirim Lamaran Pekerjaan' , apply_page_path(id: @job_detail.id), {class: 'btn btn-success btn-apply'} %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
