@@ -28,31 +28,83 @@
 
 <%#= render "devise/shared/links" %> -->
 
-<!-- login section start -->
-<section class="login-wrapper">
-  <div class="container">
-    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <% if session[:company] %>
-          <%= f.hidden_field :role, value: "Company" %>
-          <h2>Daftar Sebagai Perusahaan</h2>
-        <% else %>
-          <%= f.hidden_field :role, value: "User" %>
-          <h2>Daftar Sebagai Kandidat</h2>
-        <% end %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <!-- <img class="img-responsive" alt="logo" src="/assets/logo.png"> -->
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control input-lg", placeholder: "Nama" %>
-        <% if session[:company] %>
-          <%= f.text_field :company_name, autocomplete: "company_name", class: "form-control input-lg", placeholder: "Nama Perusahaan" %>
-        <% end %>
-        <%= f.email_field :email, autocomplete: "email", class: "form-control input-lg", placeholder: "Email" %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-lg", placeholder: "Password" %>
-        <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "form-control input-lg", placeholder: "Konfirmasi Password" %>
-        <%= button_tag "Daftar", type: "submit", class: "btn btn-primary" %>
-        <%#= render "devise/shared/links" %>
-      <% end %>
+<!-- Top content -->
+<div class="top-content">
+
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text">
+          <a href="/"><h1><%= @setting.web_name %></h1></a>
+<!--           <div class="description">
+            <p>
+              This is a free responsive login form made with Bootstrap.
+              Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+            </p>
+          </div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
+          <div class="form-top">
+            <div class="form-top-left">
+              <% if session[:company] %>
+                <h3>Daftar Sebagai Perusahaan</h3>
+              <% else %>
+                <h3>Daftar Sebagai Kandidat</h3>
+              <% end %>
+              <p>Sudah menjadi anggota? <%= link_to "Masuk", "/auth/users/sign_in" %></p>
+            </div>
+            <div class="form-top-right">
+              <i class="fa fa-key"></i>
+            </div>
+          </div>
+          <div class="form-bottom">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="form-group">
+                <label class="sr-only" for="form-username">Nama</label>
+                <%= f.text_field :name, autofocus: true, autocomplete: "off", class: "form-username form-control", placeholder: "Nama", id: "form-username" %>
+              </div>
+              <% if session[:company] %>
+                <div class="form-group">
+                  <label class="sr-only" for="form-company">Nama Perusahaan</label>
+                  <%= f.text_field :company_name, autocomplete: "off", class: "form-username form-control", placeholder: "Nama Perusahaan", id: "form-company" %>
+                </div>
+              <% end %>
+              <div class="form-group">
+                <label class="sr-only" for="form-email">Email</label>
+                <%= f.email_field :email, autocomplete: "off", id: "form-email", class: "form-username form-control", placeholder: "Email" %>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="form-password">Password</label>
+                <%= f.password_field :password, autocomplete: "off", class: "form-password form-control", id: "form-password", placeholder: "Password" %>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="form-password-confirmation">Konfirmasi Password</label>
+                <%= f.password_field :password, autocomplete: "off", class: "form-password form-control", id: "form-password-confirmation", placeholder: "Konfirmasi Password" %>
+              </div>
+              <button type="submit" class="btn">Daftar</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+<!--       <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 social-login">
+          <h3>...or login with:</h3>
+          <div class="social-login-buttons">
+            <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+              <i class="fa fa-facebook"></i> Facebook
+            </a>
+            <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+              <i class="fa fa-twitter"></i> Twitter
+            </a>
+            <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+              <i class="fa fa-google-plus"></i> Google Plus
+            </a>
+          </div>
+        </div>
+      </div> -->
     </div>
   </div>
-</section>
-<!-- login section End -->
+</div>

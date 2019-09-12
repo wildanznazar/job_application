@@ -15,6 +15,7 @@ class HomeController < ApplicationController
 
 	def companies
 		session[:company] = true
+		render layout: "companies"
 	end
 
 	def job_ad

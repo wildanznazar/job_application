@@ -10,15 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require turbolinks
 //= require rails-ujs
 //= require activestorage
-//= require jquery.min
-//= require bootstrap.min
-//= require bootsnav
-//= require main
+//= require devise/jquery-1.11.1.min
+//= require devise/bootstrap.min
+//= require devise/jquery.backstretch.min
+//= require devise/scripts
 //= require toastr
-// require_tree .
 
 toastr.options = {
   "closeButton": true,
