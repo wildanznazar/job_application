@@ -56,11 +56,8 @@ class JobAd < ApplicationRecord
 
     edit do
       field :user do
-        label "Akun User"
-        default_value do
-          bindings[:view]._current_user
-        end
-        read_only true
+        label "Perusahaan"
+        partial 'company_user'
       end
 
       field :position_title do
@@ -100,7 +97,7 @@ class JobAd < ApplicationRecord
         label "Keterangan Lengkap"
       end
       field :ad_period do
-        label "Masa Berlaku Iklan"
+        label "Iklan Berakhir Pada Tgl."
       end
       exclude_fields :created_at, :updated_at
     end
