@@ -14,6 +14,18 @@
  *= require common
  *= require main
  *= require custom
+ 
+ *= require companies/open-iconic-bootstrap.min.css
+ *= require companies/animate.css
+ *= require companies/owl.carousel.min.css
+ *= require companies/owl.theme.default.min.css
+ *= require companies/magnific-popup.css
+ *= require companies/aos.css
+ *= require companies/ionicons.min.css
+ *= require companies/bootstrap-datepicker.css
+ *= require companies/jquery.timepicker.css
+ *= require companies/flaticon.css
+ *= require companies/icomoon.css
  *= require companies/company
  *= require toastr
  *= require_self
