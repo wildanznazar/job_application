@@ -46,10 +46,10 @@
           <div class="form-top">
             <div class="form-top-left">
               <% if session[:company] %>
-                <h3>Masuk Sebagai Perusahaan</h3>
+                <h3>Silahkan Masuk</h3>
                 <p>Inputkan email dan password Anda</p>
               <% else %>
-                <h3>Masuk Sebagai Kandidat</h3>
+                <h3>Silahkan Masuk</h3>
                 <p>Pengguna baru? <%= link_to "Daftar Gratis Sekarang", "/auth/users/sign_up" %></p>
               <% end %>
             </div>
