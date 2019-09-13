@@ -9,8 +9,8 @@
 							<%= link_to "Edit", "/admin/profile/#{@profile.id}/edit", class: "btn btn-default" %>
 						<% end %>
 					</div>
-					<div class="col-md-3 col-sm-3 avatar" style="padding-bottom: 10px;">
-						<%= image_tag @profile.image.url(:medium) %>
+					<div class="col-md-3 col-sm-3" style="padding: 40px;">
+						<%= image_tag @profile.image.url(:medium), class: "media-object avatar" %>
 					</div>
 					<div class="col-md-9 col-sm-9">
 						<div class="profile-content">
