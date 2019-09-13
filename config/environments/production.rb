@@ -102,7 +102,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'jobcare.id',
     user_name:            'no_replay@jobcare.id',
-    password:             'zg$k@owtTjXI',
+    password:             '8%GXkh*UWhDK',
     authentication:       'plain',
     enable_starttls_auto: true,
     openssl_verify_mode:  'none' }
