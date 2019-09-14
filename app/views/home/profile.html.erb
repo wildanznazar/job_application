@@ -3,53 +3,59 @@
 		<div class="col-md-12">
 			<div class="row">
 				<div class="basic-information">
-					<div style="position: absolute; right: 5px; top: 5px;">
-						<%= link_to "Unduh Resume / CV", @profile.resume.url, class: "btn btn-success", target: "_blank" %>
-						<% if current_user.role == CONFIG["user"] %>
-							<%= link_to "Edit", "/admin/profile/#{@profile.id}/edit", class: "btn btn-default" %>
-						<% end %>
-					</div>
-					<div class="col-md-3 col-sm-3" style="padding: 40px;">
-						<%= image_tag @profile.image.url(:medium), class: "media-object avatar" %>
-					</div>
-					<div class="col-md-9 col-sm-9">
-						<div class="profile-content">
-							<h2><%= @profile.name %> </h2>
-							<ul class="information">
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Jenis Kelamin</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @profile.gender %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Email</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @profile.email %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Telepon</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @profile.phone %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Alamat</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @profile.address %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Tgl. Lahir</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @profile.dob.strftime("%d %B %Y") %></div>
-								</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-user fa-fw"></i> Profil
+							<div style="float: right;">
+								<%= link_to "Unduh Resume", @profile.resume.url, class: "btn btn-xs btn-success", target: "_blank" %>
+								<% if current_user.role == CONFIG["user"] %>
+									<%= link_to "Edit", "/admin/profile/#{@profile.id}/edit", class: "btn btn-xs btn-default" %>
+								<% end %>
+							</div>
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="col-md-3 col-sm-3" style="padding: 33px;">
+								<%= image_tag @profile.image.url(:medium), class: "media-object avatar" %>
+							</div>
+							<div class="col-md-9 col-sm-9" style="padding: 0px;">
+								<h2><%= @profile.name %> </h2>
+								<ul class="information">
+									<div class="row">
+										<div class="col-xs-5 col-lg-3"><b>Jenis Kelamin</b></div>
+										<div class="col-xs-1">:</div>
+										<div class="col-xs-6"><%= @profile.gender %></div>
+									</div>
+									<div class="row">
+										<div class="col-xs-5 col-lg-3"><b>Email</b></div>
+										<div class="col-xs-1">:</div>
+										<div class="col-xs-6"><%= mail_to @profile.email, @profile.email %></div>
+									</div>
+									<div class="row">
+										<div class="col-xs-5 col-lg-3"><b>Telepon</b></div>
+										<div class="col-xs-1">:</div>
+										<div class="col-xs-6"><%= link_to @profile.phone, "tel:#{@profile.phone}" %></div>
+									</div>
+									<div class="row">
+										<div class="col-xs-5 col-lg-3"><b>Alamat</b></div>
+										<div class="col-xs-1">:</div>
+										<div class="col-xs-6"><%= @profile.address %></div>
+									</div>
+									<div class="row">
+										<div class="col-xs-5 col-lg-3"><b>Tgl. Lahir</b></div>
+										<div class="col-xs-1">:</div>
+										<div class="col-xs-6"><%= @profile.dob.strftime("%d %B %Y") %></div>
+									</div>
+								</ul>
+							</div>
+
+							<ul class="social-custom">
 							</ul>
 						</div>
 					</div>
-
-					<ul class="social-custom">
-					</ul>
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-user fa-fw"></i> Tentang Saya
+							<i class="fa fa-bars fa-fw"></i> Tentang Saya
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
@@ -59,7 +65,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-leaf fa-fw"></i> Pendidikan:
+							<i class="fa fa-mortar-board fa-fw"></i> Pendidikan
 						</div>
 						<% @profile.educations.each do |education| %>
 						<!-- /.panel-heading -->
@@ -97,7 +103,7 @@
 					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-leaf fa-fw"></i> Pengalaman Kerja:
+							<i class="fa fa-asterisk fa-fw"></i> Pengalaman Kerja
 						</div>
 						<!-- /.panel-heading -->
 						<% @profile.experiences.each do |experience| %>
