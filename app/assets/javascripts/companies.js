@@ -16,25 +16,6 @@
 //= require jquery.min
 //= require bootstrap.min
 //= require bootsnav
-//= require main
-
-//= require companies/jquery.min.js
-//= require companies/jquery-migrate-3.0.1.min.js
-//= require companies/popper.min.js
-//= require companies/bootstrap.min.js
-//= require companies/jquery.easing.1.3.js
-//= require companies/jquery.waypoints.min.js
-//= require companies/jquery.stellar.min.js
-//= require companies/owl.carousel.min.js
-//= require companies/jquery.magnific-popup.min.js
-//= require companies/aos.js
-//= require companies/jquery.animateNumber.min.js
-//= require companies/bootstrap-datepicker.js
-//  require companies/jquery-3.2.1.min.js
-//= require companies/scrollax.min.js
-//= require companies/google-map.js
-//= require companies/main
-
 //= require toastr
 // require_tree .
 

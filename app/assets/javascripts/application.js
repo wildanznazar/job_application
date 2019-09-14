@@ -16,7 +16,6 @@
 //= require jquery.min
 //= require bootstrap.min
 //= require bootsnav
-//= require main
 //= require toastr
 // require_tree .
 
