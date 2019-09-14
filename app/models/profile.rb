@@ -7,7 +7,7 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :experiences, :allow_destroy => true
 
   validates :image, :name, :gender, :phone, :email, :address, :dob, :skill, 
-            :expected_salary, :resume, :description, :educations, :experiences, presence: true
+            :expected_salary, :resume, :description, presence: true
 
   has_attached_file :image,
     :styles => {
