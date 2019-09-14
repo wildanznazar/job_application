@@ -1,4 +1,6 @@
 class Setting < ApplicationRecord
+  validates :web_name, :email, :phone, :address, presence: true
+
   rails_admin do
 
     object_label_method do

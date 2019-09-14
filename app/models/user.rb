@@ -23,6 +23,7 @@ class User < ApplicationRecord
     edit do
     	field :email do
         label "Email Akun"
+        read_only true
       end
       field :name do
         label "Nama Akun"

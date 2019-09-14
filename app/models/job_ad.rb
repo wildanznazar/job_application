@@ -2,6 +2,10 @@ class JobAd < ApplicationRecord
   belongs_to :user
   has_many :applicants, :dependent => :destroy
 
+  validates :position_title, :position_level, :employment_type, :job_specialization, :work_location,
+            :monthly_salary, :education_level, :field_of_studies, :years_of_experience, :skills,
+            :language, :job_description, :ad_period, presence: true
+
   rails_admin do
     weight -1
     label "Iklan Pekerjaan"
@@ -115,7 +119,7 @@ class JobAd < ApplicationRecord
     ["SD / MI", "SMP / MTS", "SMA / SMK / MA", "Diploma", "Sarjana", "Magister", "Doktor"]
   end
 
-  paginates_per 10
+  paginates_per 25
 
   def self.search(search)
     if search

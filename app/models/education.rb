@@ -1,6 +1,8 @@
 class Education < ApplicationRecord
   belongs_to :profile, :inverse_of => :educations
 
+  validates :institute, :qualification, :field_of_study, :grade, :graduation_date, presence: true
+
   rails_admin do
   	visible false
     label "Pendidikan"
