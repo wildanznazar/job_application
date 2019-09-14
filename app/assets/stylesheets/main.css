@@ -1056,7 +1056,7 @@ footer .form-control {
     margin-bottom:7px;
     border-radius: 2px;
     box-shadow: none;
-    color: #8796a9;
+    color: #8796a9 !important;
     height: 45px;
 	font-size:14px;
     background: #333d4a;
