@@ -6559,7 +6559,7 @@ button.bg-dark:focus {
 
 .mt-5,
 .my-5 {
-  margin-top: 3rem !important; }
+  margin-top: 1rem !important; }
 
 .mr-5,
 .mx-5 {
@@ -8328,7 +8328,7 @@ h1, h2, h3, h4, h5,
         @media (min-width: 992px) {
           .hero-wrap .slider-text .one-forth .text {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 0;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
@@ -8349,7 +8349,7 @@ h1, h2, h3, h4, h5,
       position: relative;
       z-index: 1; }
     .hero-wrap .slider-text h1 {
-      font-size: 60px;
+      font-size: 45px;
       color: #000;
       line-height: 1.2;
       font-weight: 700; }
@@ -8663,6 +8663,8 @@ h1, h2, h3, h4, h5,
     .services .icon span {
       font-size: 44px;
       color: #fff; }
+      .services .icon i {
+        color: #fff; }
   .services .media-body {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -8681,6 +8683,8 @@ h1, h2, h3, h4, h5,
       background: #fff; }
       .services:hover .icon span {
         color: #31a4db; }
+        .services:hover .icon i {
+          color: #31a4db; }
     .services:hover .media-body h3 {
       color: #fff; }
     .services:hover .media-body p {
