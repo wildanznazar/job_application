@@ -19,7 +19,7 @@ class HomeController < ApplicationController
 	end
 
 	def job_ad
-		redirect_to job_detail_path(params[:id])
+		redirect_to job_detail_path(id: params[:format])
 	end
 
 	def profile
