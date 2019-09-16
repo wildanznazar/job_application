@@ -125,10 +125,11 @@
 					<div>
 						<% if !user_signed_in? %>
 							<%= link_to 'Kirim Lamaran Pekerjaan' , "javascript:void(0)", {class: 'btn btn-success btn-apply', style: "margin-left: 10px;", onclick: "alert('Silahkan Masuk / Daftar Untuk Melamar Pekerjaan Yang Anda Inginkan.')"} %>
-						<% else %>
+							<%= link_to 'Kembali' , browse_jobs_path, {class: 'btn btn-default btn-apply'} %>
+						<% elsif user_signed_in? && current_user.role == CONFIG["user"] %>
 							<%= link_to 'Kirim Lamaran Pekerjaan' , apply_page_path(id: @job_detail.id), {class: 'btn btn-success btn-apply', style: "margin-left: 10px;"} %>
+							<%= link_to 'Kembali' , browse_jobs_path, {class: 'btn btn-default btn-apply'} %>
 						<% end %>
-						<%= link_to 'Batal' , browse_jobs_path, {class: 'btn btn-default btn-apply'} %>
 					</div>
 				</div>
 			</div>
