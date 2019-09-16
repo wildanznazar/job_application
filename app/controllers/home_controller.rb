@@ -28,13 +28,6 @@ class HomeController < ApplicationController
 		else
 			@profile = current_user.profiles.first
 		end
-
-		if @profile.present? && (!@profile.image.url.present? || @profile.name.present? || 
-			!@profile.gender || !@profile.phone || !@profile.email || !@profile.address || 
-			!@profile.dob || !@profile.skill || !@profile.expected_salary.present? || 
-			!@profile.resume.url.present? || !@profile.description.present?)
-			redirect_to :back, notice: "Silahkan lengkapi Profil Anda terlebih dahulu."
-		end
 	end
 
 	def browse_jobs
@@ -55,6 +48,13 @@ class HomeController < ApplicationController
 	def apply_page
 		job_ad = JobAd.find(params[:id])
 		@applicant = Applicant.new(job_ad_id: job_ad.id, user_id: current_user.id, company_id: job_ad.user.id, status: "Proses")
+	
+		if current_user.profile.present? && (current_user.profile.image.url != "/resumes/original/missing.png" || current_user.profile.name.present? || 
+			!current_user.profile.gender || !current_user.profile.phone || !current_user.profile.email || !current_user.profile.address || 
+			!current_user.profile.dob || !current_user.profile.skill || !current_user.profile.expected_salary.present? || 
+			current_user.profile.resume.url != "/resumes/original/missing.png" || !current_user.profile.description.present?)
+			redirect_to job_detail_url(id: job_ad.id), alert: "Silahkan lengkapi Profil Anda terlebih dahulu."
+		end
 	end
 
 	def apply
