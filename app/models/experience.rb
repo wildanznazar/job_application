@@ -1,8 +1,6 @@
 class Experience < ApplicationRecord
   belongs_to :profile, :inverse_of => :experiences
   
-  validates :position_title, :company_name, :industry, :join_start, :monthly_aslary, presence: true
-
   rails_admin do
   	visible false
     label "Pengalaman Kerja"

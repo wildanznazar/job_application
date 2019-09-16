@@ -70,7 +70,8 @@ class User < ApplicationRecord
 
   after_create do
     if self.role == CONFIG["user"]
-      self.profiles.create
+      profile = self.profiles.new
+      profile.save(validate: false)
     end
   end
 

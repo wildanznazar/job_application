@@ -28,6 +28,13 @@ class HomeController < ApplicationController
 		else
 			@profile = current_user.profiles.first
 		end
+
+		if @profile.present? && (!@profile.image.url.present? || @profile.name.present? || 
+			!@profile.gender || !@profile.phone || !@profile.email || !@profile.address || 
+			!@profile.dob || !@profile.skill || !@profile.expected_salary.present? || 
+			!@profile.resume.url.present? || !@profile.description.present?)
+			redirect_to :back, notice: "Silahkan lengkapi Profil Anda terlebih dahulu."
+		end
 	end
 
 	def browse_jobs
