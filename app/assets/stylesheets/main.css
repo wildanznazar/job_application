@@ -37,8 +37,8 @@ background:#f4f5f7;
 }
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #2d98d4;
-    border-color: #2d98d4;
+    background-color: #31a48c;
+    border-color: #31a48c;
     text-transform: uppercase;
     border-radius: 2px;
     box-shadow: none;
@@ -56,14 +56,14 @@ nav.navbar.bootsnav ul.nav > li > a {
     background-color: transparent !important;
 }
 nav.navbar.bootsnav ul.nav > li > a:hover{
-color:#2d98d4;
+color:#31a48c;
 }
 nav.navbar.bootsnav ul.nav > li.active> a{
-color:#2d98d4;
+color:#31a48c;
 }
 @media (min-width: 1024px){
 nav.navbar li.dropdown ul.dropdown-menu {
-border-top: solid 5px #2d98d4 !important;
+border-top: solid 5px #31a48c !important;
 }
 }
 /*-------------------Banner Start-----------------------*/
@@ -122,7 +122,7 @@ outline:none;
 border-right:1px solid rgba(107,121,124,0.3) !important;
 }
 .main-banner .btn.seub-btn{
-background:#2d98d4 ;
+background:#31a48c ;
 color:#ffffff;
 text-transform:uppercase;
 font-size:18px;
@@ -178,7 +178,7 @@ left: 50px;
 height: 25px;
 width: 25px;
 z-index: 10;
-border: 5px solid #2d98d4;
+border: 5px solid #31a48c;
 border-radius: 100%;
 -moz-animation: ring 1s ease-in;
 -moz-animation-iteration-count: infinite;
@@ -194,7 +194,7 @@ height: 6px;
 -webkit-border-radius: 30px;
 -moz-border-radius: 30px;
 border-radius: 100%;
-background-color: #2d98d4;
+background-color: #31a48c;
 position: absolute;
 left: 59px;
 top: -10px;
@@ -236,7 +236,7 @@ margin-bottom:10px;
 color:#404b4d;
 }
 .basic-information h2 span{
-color:#2d98d4;
+color:#31a48c;
 font-size:15.5px;
 display:block;
 }
@@ -355,7 +355,7 @@ font-size: 16px;
 line-height: 1.9;
 }
 .service-tag {
-background-color: #2d98d4;
+background-color: #31a48c;
 border-radius: 0 2px 2px 0;
 color: #fff;
 display: inline-block;
@@ -379,7 +379,7 @@ width: 4px;
 }
 .service-tag:before {
 border-top: 10px solid transparent;
-border-right: 8px solid #2d98d4;
+border-right: 8px solid #31a48c;
 border-bottom: 10px solid transparent;
 content: "";
 height: 0;
@@ -407,7 +407,7 @@ font-size: inherit;
 text-rendering: auto;
 -webkit-font-smoothing: antialiased;
 content: "\f067";
-color:#2d98d4;
+color:#31a48c;
 padding: 8px 12px 8px 5px;
 margin-left: -31px;
 }
@@ -439,7 +439,7 @@ font-size:14px;
 .features-content span{
 font-size:45px;
 margin-bottom:25px;
-color:#2d98d4;
+color:#31a48c;
 }
 
 /*--------------------Style for Browse Job----------------------*/
@@ -518,7 +518,7 @@ background:#cc68f3;
 background:#ff8f3e;
 }
 .brows-btn{
-background:#2d98d4 ;
+background:#31a48c ;
 color:#ffffff;
 text-transform:uppercase;
 font-size:16px;
@@ -597,7 +597,7 @@ box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
 }
 
 .brows-btn{
-background:#2d98d4;
+background:#31a48c;
 color:#ffffff;
 text-transform:uppercase;
 font-size:16px;
@@ -713,7 +713,7 @@ background: #ef183c;
 }
 /*-----------------------counter Section start-------------------------*/
 .counter{
-background:#2d98d4;
+background:#31a48c;
 padding:60px 0;
 }
 
@@ -778,7 +778,7 @@ padding:60px 0;
     font-size: 14px;
     font-weight: bold;
     margin: 0;
-    color: #2d98d4;
+    color: #31a48c;
     text-transform: uppercase;
 }
 .testimonial .post{
@@ -806,7 +806,7 @@ padding:60px 0;
 }
 .owl-theme .owl-controls .owl-page.active span,
 .owl-theme .owl-controls.clickable .owl-page:hover span{
-    border: 4px solid #2d98d4;
+    border: 4px solid #31a48c;
 }
 /*------------------package section start---------------*/
 .package-box {
@@ -854,7 +854,7 @@ font-weight: 600;
     opacity: 0.7;
 }
 button.btn.btn-package {
-    background: #2d98d4;
+    background: #31a48c;
     color: #ffffff;
     text-transform: uppercase;
     padding: 10px 32px;
@@ -925,7 +925,7 @@ background:#242c36;
     color: #636e7b;
 }
 .user-social-profile ul li a i:hover, .user-social-profile ul li a i:focus{
-background:#2d98d4;
+background:#31a48c;
 color:#ffffff;
 }
 /*----------------Newsletter Style----------------*/
@@ -946,9 +946,9 @@ color:#ffffff;
     box-shadow: none;
 }
 .newsletter button.btn.btn-default {
-    background:#2d98d4;
+    background:#31a48c;
 	text-transform:uppercase;
-    border-color:#2d98d4;
+    border-color:#31a48c;
     color: #ffffff;
 }
 /*------login style---*/
@@ -956,7 +956,7 @@ section.login-wrapper {
     text-align: center;
 }
 section.login-wrapper p a {
-    color: #2d98d4;
+    color: #31a48c;
 }
 section.login-wrapper p{
 margin-top:20px;
@@ -997,7 +997,7 @@ font-size:20px;
 margin-top:15px;
 }
 .inner-banner p span{
-color:#2d98d4;
+color:#31a48c;
 }
 .inner-banner:before{
 content:"";
@@ -1022,7 +1022,7 @@ text-align:center;
 margin-top:50px;
 }
 .copy-right a{
-color:#2d98d4;
+color:#31a48c;
 }
 footer img{
 margin-bottom:20px;
@@ -1045,7 +1045,8 @@ color:#636e7b;
 line-height:2;
 }
 footer ul li a:hover{
-color:#2d98d4;
+color:#31a48c;
+text-decoration: none;
 }
 footer address ul li{
 margin-bottom:10px;
@@ -1070,8 +1071,8 @@ footer button.btn.btn-primary {
     padding: 10px 0;
     text-align: center;
     text-transform: uppercase;
-    background: #2d98d4;
-    border: 1px solid #2d98d4;
+    background: #31a48c;
+    border: 1px solid #31a48c;
 }
 footer .form-control::-moz-placeholder{color:#8796a9;opacity:1}
 footer .form-control:-ms-input-placeholder{color:#8796a9}

@@ -134,7 +134,7 @@
 
 					<div>
 						<% if !user_signed_in? || (user_signed_in? && current_user.role != CONFIG["company"]) %>
-							<%= link_to 'Kirim Lamaran Pekerjaan' , apply_page_path(id: @job_detail.id), {class: 'btn btn-success btn-apply', style: "margin-left: 10px;"} %>
+							<%= link_to 'Kirim Lamaran Pekerjaan' , apply_page_path(id: @job_detail.id), {class: 'btn btn-primary btn-apply', style: "margin-left: 10px;"} %>
 							<%= link_to 'Kembali' , browse_jobs_path, {class: 'btn btn-default btn-apply'} %>
 						<% end %>
 					</div>

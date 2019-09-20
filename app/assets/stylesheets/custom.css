@@ -126,7 +126,7 @@ width:100%;
 	border-right:1px solid rgba(107,121,124,0.3) !important;
 }
 .main-banner-custom .btn.seub-btn{
-	background:#2d98d4 ;
+	background:#31a48c ;
 	color:#ffffff;
 	text-transform:uppercase;
 	font-size:18px;
@@ -165,7 +165,7 @@ margin-bottom:10px;
 color:#404b4d;
 }
 .basic-information-custom h2 span{
-	color:#2d98d4;
+	color:#31a48c;
 	font-size:15.5px;
 	display:block;
 }
@@ -206,30 +206,30 @@ color:#404b4d;
 	font-weight: bold;
 }
 
-	.information-custom span{
-		padding-top: auto;
-	}
+.information-custom span{
+	padding-top: auto;
+}
 
-	.information-custom table, {
-		width: 100%;
-	}
+.information-custom table, {
+	width: 100%;
+}
 
-	.information-custom th, td {
-		vertical-align: text-top;
-	  	padding: 0px 50px 20px 0px;
- 	 	/*border-bottom:1px solid rgba(107,121,124,0.1);*/
+.information-custom th, td {
+	vertical-align: text-top;
+		padding: 0px 50px 20px 0px;
+	/*border-bottom:1px solid rgba(107,121,124,0.1);*/
 
-	}
+}
 
-	.information-custom th {
-	  text-align: left;
-	}
+.information-custom th {
+	text-align: left;
+}
 
-	.panel-body ul {
-    margin: 0;
-    padding: 0;
-    margin-top: 0px;
-	}
+.panel-body ul {
+	margin: 0;
+	padding: 0;
+	margin-top: 0px;
+}
 
 
 @media only screen and (min-width: 768px){
@@ -241,41 +241,38 @@ color:#404b4d;
 @media (max-width: 992px){
 	nav.navbar .navbar-brand img.logo {
     width: 150px;
-    margin-top: -29px;
+    margin-top: 5px;
   }
 
   .information-custom li span{
-	display: inline-block;
-	font-weight:bold;
-	width:100px;
+		display: inline-block;
+		font-weight:bold;
+		width:100px;
+	}
 
-}
+	.information li span{
+		display: inline-block;
+		font-weight:bold;
+		width:120px;
+	}
 
-.information li span{
-	display: inline-block;
-	font-weight:bold;
-	width:120px;
-
-}
-
-.information-custom{
-	margin:0;
-	padding:0px 10px 0px 10px;
-}
-
+	.information-custom{
+		margin:0;
+		padding:0px 10px 0px 10px;
+	}
 }
 
 @media (min-width: 1024px) {
 	nav.navbar .navbar-brand img.logo {
     position: relative;
-    max-width: 100%;
-    top: -34px;
+    max-width: 150px;
+    top: 5px;
 	}
 
 	nav.navbar.sticked .navbar-brand img.logo {
     position: relative;
-    max-width: 100%;
-    top: -34px;
+    max-width: 150px;
+    top: 5px;
 	}
 
 
