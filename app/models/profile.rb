@@ -7,7 +7,7 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :experiences, :allow_destroy => true
 
   validates :image, :name, :gender, :phone, :email, :address, :dob, :skill, 
-            :expected_salary, :resume, :description, presence: true
+  :expected_salary, :description, presence: true
 
   has_attached_file :image,
     :styles => {
@@ -40,6 +40,9 @@ class Profile < ApplicationRecord
       field :name do
         label "Nama"
       end
+      field :nil do
+        label "KTP"
+      end
       field :gender do
         label "Jenis Kelamin"
       end
@@ -71,6 +74,9 @@ class Profile < ApplicationRecord
       field :name do
         label "Nama"
       end
+      field :nik do
+        label "KTP"
+      end
       field :gender do
         label "Jenis Kelamin"
       end
@@ -99,7 +105,7 @@ class Profile < ApplicationRecord
         label "Pengalaman Kerja"
       end
       field :description, :wysihtml5 do
-        label "Keterangan Tambahan"
+        label "Tentang Saya"
       end
       field :resume do
         label "Unggah Resume / CV (pdf & docx format)"

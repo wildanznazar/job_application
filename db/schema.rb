@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_043133) do
+ActiveRecord::Schema.define(version: 2019_09_20_051156) do
 
   create_table "applicants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "job_ad_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_043133) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.integer "company_id"
+    t.boolean "cancel", default: false
     t.index ["job_ad_id"], name: "index_applicants_on_job_ad_id"
     t.index ["user_id"], name: "index_applicants_on_user_id"
   end
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_043133) do
     t.string "employment_type"
     t.string "job_specialization"
     t.string "work_location"
-    t.bigint "monthly_salary", default: 0
+    t.bigint "monthly_salary"
     t.string "education_level"
     t.string "field_of_studies"
     t.string "years_of_experience"
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_043133) do
     t.string "resume_content_type"
     t.integer "resume_file_size"
     t.datetime "resume_updated_at"
+    t.string "nik"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_043133) do
     t.string "website"
     t.string "company_email"
     t.string "phone"
+    t.text "company_info"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

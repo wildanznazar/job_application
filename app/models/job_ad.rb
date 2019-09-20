@@ -50,7 +50,7 @@ class JobAd < ApplicationRecord
         label "Bahasa yang Digunakan"
       end
       field :job_description do
-        label "Keterangan Lengkap"
+        label "Deskripsi Pekerjaan"
       end
       field :ad_period do
         label "Masa Berlaku Iklan"
@@ -98,7 +98,7 @@ class JobAd < ApplicationRecord
         label "Bahasa yang Digunakan"
       end
       field :job_description, :wysihtml5 do
-        label "Keterangan Lengkap"
+        label "Deskripsi Pekerjaan"
       end
       field :ad_period do
         label "Iklan Berakhir Pada Tgl."

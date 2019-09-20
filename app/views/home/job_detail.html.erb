@@ -13,43 +13,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-building fa-fw"></i> Perusahaan<br>
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body">
-							<ul class="information">
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Nama Perusahaan</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @job_detail.user.company_name %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Alamat</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @job_detail.user.address %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Website</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= link_to @job_detail.user.website, "http://#{@job_detail.user.website}", target: "_blank" %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Email</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= mail_to @job_detail.user.company_email, @job_detail.user.company_email %></div>
-								</div>
-								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Telepon</b></div>
-									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= link_to @job_detail.user.phone, "tel:#{@job_detail.user.phone}" %></div>
-								</div>
-							</ul>
-						</div>
-					</div>
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<i class="fa fa-bars fa-fw"></i> Deskripsi<br>
+							<i class="fa fa-bars fa-fw"></i> Deskripsi Pekerjaan<br>
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
@@ -119,6 +83,52 @@
 									<div class="col-xs-6"><%= @job_detail.language %></div>
 								</div>
 							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-building fa-fw"></i> Perusahaan<br>
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<ul class="information">
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Nama Perusahaan</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.company_name %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Alamat</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= @job_detail.user.address %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Website</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= link_to @job_detail.user.website, "http://#{@job_detail.user.website}", target: "_blank" %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Email</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= mail_to @job_detail.user.company_email, @job_detail.user.company_email %></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-5 col-lg-3"><b>Telepon</b></div>
+									<div class="col-xs-1">:</div>
+									<div class="col-xs-6"><%= link_to @job_detail.user.phone, "tel:#{@job_detail.user.phone}" %></div>
+								</div>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-info fa-fw"></i> Info Singkat Perusahaan<br>
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<p><%= simple_format @job_detail.user.company_info %></p>
 						</div>
 					</div>
 

@@ -58,6 +58,12 @@ class User < ApplicationRecord
           bindings[:view]._current_user.role == CONFIG["company"]
         end
       end
+      field :company_info, :wysihtml5 do
+        label "Info Singkat Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"]
+        end
+      end
     	field :role do
         visible do
           bindings[:view]._current_user.role == CONFIG["admin"]
