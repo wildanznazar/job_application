@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :companies, :browse_jobs, :job_detail, :job_ad]
+	before_action :authenticate_user!, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail]
+	authorize_resource :class => false, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail]
 
 	def index
 		if user_signed_in?

@@ -17,6 +17,7 @@ class Ability
       can :access, :rails_admin   # grant access to rails_admin
       can :read, :dashboard
 
+      can :profile, :home
       can :update, User, id: user.id
       can :show_in_app, JobAd, user_id: user.id
       can :manage, JobAd, user_id: user.id
@@ -25,6 +26,7 @@ class Ability
       can :access, :rails_admin   # grant access to rails_admin
       can :read, :dashboard
 
+      can [:profile, :apply_page, :apply], :home
       can :update, User, id: user.id
       can :show_in_app, Profile, user_id: user.id
       can [:read, :update], Profile, user_id: user.id
