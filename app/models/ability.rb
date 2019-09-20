@@ -11,7 +11,7 @@ class Ability
       can :read, :dashboard
 
       can [:read, :update], Setting
-      can [:read, :update, :destroy], User
+      can [:read, :create, :update, :destroy], User
       cannot :destroy, User, id: user.id
     elsif user.role == CONFIG["company"]
       can :access, :rails_admin   # grant access to rails_admin

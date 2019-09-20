@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :applicants, :dependent => :destroy
   has_many :company_applicants, class_name: "Applicant", foreign_key: "company_id", :dependent => :destroy
 
+  validates :email, :name, :role, presence: true
+  validates :password, presence: true, on: :create
+
   rails_admin do
     object_label_method do
       :email
@@ -20,10 +23,9 @@ class User < ApplicationRecord
     	field :role
     end
 
-    edit do
+    create do
     	field :email do
         label "Email Akun"
-        read_only true
       end
       field :name do
         label "Nama Akun"
@@ -31,31 +33,31 @@ class User < ApplicationRecord
       field :company_name do
         label "Nama Perusahaan"
         visible do
-          bindings[:view]._current_user.role == CONFIG["company"]
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :address do
         label "Alamat Perusahaan"
         visible do
-          bindings[:view]._current_user.role == CONFIG["company"]
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :website do
         label "Website Perusahaan"
         visible do
-          bindings[:view]._current_user.role == CONFIG["company"]
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :company_email do
         label "Email Perusahaan"
         visible do
-          bindings[:view]._current_user.role == CONFIG["company"]
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :phone do
         label "Telepon Perusahaan"
         visible do
-          bindings[:view]._current_user.role == CONFIG["company"]
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :company_info, :wysihtml5 do
@@ -70,7 +72,58 @@ class User < ApplicationRecord
         end
       end
     	field :password
-    	field :password_confirmation
+    end
+
+    edit do
+    	field :email do
+        label "Email Akun"
+        read_only true
+      end
+      field :name do
+        label "Nama Akun"
+      end
+      field :company_name do
+        label "Nama Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+        end
+      end
+      field :address do
+        label "Alamat Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+        end
+      end
+      field :website do
+        label "Website Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+        end
+      end
+      field :company_email do
+        label "Email Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+        end
+      end
+      field :phone do
+        label "Telepon Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+        end
+      end
+      field :company_info, :wysihtml5 do
+        label "Info Singkat Perusahaan"
+        visible do
+          bindings[:view]._current_user.role == CONFIG["company"]
+        end
+      end
+    	field :role do
+        visible do
+          bindings[:view]._current_user.role == CONFIG["admin"]
+        end
+      end
+    	field :password
     end
   end
 
