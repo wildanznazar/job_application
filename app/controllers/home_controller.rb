@@ -62,7 +62,8 @@ class HomeController < ApplicationController
 		@applicant = Applicant.new(applicant_params)
 
     respond_to do |format|
-      if @applicant.save
+			if @applicant.save
+				JobMailer.with(user_id: current_user.id, job_ad_id: @applicant.job_ad_id).new_applicant.deliver_now
         format.html { redirect_to job_detail_url(id: @applicant.job_ad_id), notice: 'Lamaran Anda Berhasil Dikirim.' }
       else
         format.html { redirect_to job_detail_url(id: @applicant.job_ad_id), alert: @applicant.errors.full_messages.to_sentence }
