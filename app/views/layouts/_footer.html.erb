@@ -40,8 +40,8 @@
 			<address>
 				<ul>
 					<li><%= @setting.address %></li>
-					<li><%= @setting.email %></li>
-					<li><%= @setting.phone %></li>
+					<li><%= mail_to @setting.email, @setting.email %></li>
+					<li><%= link_to @setting.phone, "tel:#{@setting.phone}" %></li>
 				</ul>
 			</address>
 		</div>
