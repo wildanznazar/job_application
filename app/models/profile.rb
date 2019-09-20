@@ -6,7 +6,7 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :educations, :allow_destroy => true
   accepts_nested_attributes_for :experiences, :allow_destroy => true
 
-  validates :image, :name, :gender, :phone, :email, :address, :dob, :skill, 
+  validates :image, :nik, :name, :gender, :phone, :email, :address, :dob, :skill, 
   :expected_salary, :description, presence: true
 
   has_attached_file :image,
