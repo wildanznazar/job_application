@@ -56,6 +56,10 @@ class HomeController < ApplicationController
 			!current_user.profile.description.present? || !current_user.profile.nik.present?
 			redirect_to job_detail_url(id: job_ad.id), alert: "Silahkan lengkapi Profil Anda terlebih dahulu."
 		end
+
+		if Applicant.where(user_id: current_user.id, job_ad_id: job_ad.id).count > 0
+			redirect_to job_detail_url(id: job_ad.id), alert: "Anda sudah melamar lowongan pekerjaan ini."
+		end
 	end
 
 	def apply
