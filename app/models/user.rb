@@ -25,45 +25,39 @@ class User < ApplicationRecord
 
     create do
     	field :email do
-        label "Email Akun"
+        label "Email"
       end
       field :name do
-        label "Nama Akun"
+        label "Nama"
       end
-      field :company_name do
-        label "Nama Perusahaan"
-        visible do
-          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
-        end
-      end
+      # field :company_name do
+      #   label "Nama"
+      #   visible do
+      #     bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+      #   end
+      # end
       field :address do
-        label "Alamat Perusahaan"
+        label "Alamat"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :website do
-        label "Website Perusahaan"
+        label "Website"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
-      field :company_email do
-        label "Email Perusahaan"
-        visible do
-          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
-        end
-      end
+      # field :company_email do
+      #   label "Email"
+      #   visible do
+      #     bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+      #   end
+      # end
       field :phone do
-        label "Telepon Perusahaan"
+        label "Telepon"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
-        end
-      end
-      field :company_info, :wysihtml5 do
-        label "Info Singkat Perusahaan"
-        visible do
-          bindings[:view]._current_user.role == CONFIG["company"]
         end
       end
     	field :role do
@@ -75,45 +69,45 @@ class User < ApplicationRecord
     end
 
     edit do
-    	field :email do
-        label "Email Akun"
+      field :email do
+        label "Email"
         read_only true
       end
       field :name do
-        label "Nama Akun"
+        label "Nama"
       end
-      field :company_name do
-        label "Nama Perusahaan"
-        visible do
-          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
-        end
-      end
+      # field :company_name do
+      #   label "Nama"
+      #   visible do
+      #     bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+      #   end
+      # end
       field :address do
-        label "Alamat Perusahaan"
+        label "Alamat"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :website do
-        label "Website Perusahaan"
+        label "Website"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
-      field :company_email do
-        label "Email Perusahaan"
-        visible do
-          bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
-        end
-      end
+      # field :company_email do
+      #   label "Email"
+      #   visible do
+      #     bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
+      #   end
+      # end
       field :phone do
-        label "Telepon Perusahaan"
+        label "Telepon"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"] || bindings[:view]._current_user.role == CONFIG["admin"]
         end
       end
       field :company_info, :wysihtml5 do
-        label "Info Singkat Perusahaan"
+        label "Info Singkat"
         visible do
           bindings[:view]._current_user.role == CONFIG["company"]
         end
@@ -140,5 +134,9 @@ class User < ApplicationRecord
 
   def profile
     self.profiles.first
+  end
+
+  def label
+    "asda"
   end
 end

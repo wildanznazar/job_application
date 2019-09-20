@@ -6,7 +6,7 @@
 				<div class="basic-information-custom">
 					<div class="col-md-36 col-sm-36">
 						<h2><%= @job_detail.position_title %> </h2>
-						<!-- <h4><%= @job_detail.user.company_name %> </h4> -->
+						<!-- <h4><%= @job_detail.user.name %> </h4> -->
 						<div class="panel-body">
 						</div>
 					</div>
@@ -94,9 +94,9 @@
 						<div class="panel-body">
 							<ul class="information">
 								<div class="row">
-									<div class="col-xs-5 col-lg-3"><b>Nama Perusahaan</b></div>
+									<div class="col-xs-5 col-lg-3"><b>Nama</b></div>
 									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= @job_detail.user.company_name %></div>
+									<div class="col-xs-6"><%= @job_detail.user.name %></div>
 								</div>
 								<div class="row">
 									<div class="col-xs-5 col-lg-3"><b>Alamat</b></div>
@@ -111,7 +111,7 @@
 								<div class="row">
 									<div class="col-xs-5 col-lg-3"><b>Email</b></div>
 									<div class="col-xs-1">:</div>
-									<div class="col-xs-6"><%= mail_to @job_detail.user.company_email, @job_detail.user.company_email %></div>
+									<div class="col-xs-6"><%= mail_to @job_detail.user.email, @job_detail.user.email %></div>
 								</div>
 								<div class="row">
 									<div class="col-xs-5 col-lg-3"><b>Telepon</b></div>

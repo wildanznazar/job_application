@@ -68,15 +68,13 @@
               <% end %>
               <%= render "devise/shared/error_messages", resource: resource %>
               <div class="form-group">
-                <label class="sr-only" for="form-username">Nama</label>
+                <% if session[:company] %>
+                  <label class="sr-only" for="form-username">Nama Perusahaan</label>
+                <% else %>
+                  <label class="sr-only" for="form-username">Nama</label>
+                <% end %>
                 <%= f.text_field :name, autofocus: true, autocomplete: "off", class: "form-username form-control", placeholder: "Nama", id: "form-username" %>
               </div>
-              <% if session[:company] %>
-                <div class="form-group">
-                  <label class="sr-only" for="form-company">Nama Perusahaan</label>
-                  <%= f.text_field :company_name, autocomplete: "off", class: "form-username form-control", placeholder: "Nama Perusahaan", id: "form-company" %>
-                </div>
-              <% end %>
               <div class="form-group">
                 <label class="sr-only" for="form-email">Email</label>
                 <%= f.email_field :email, autocomplete: "off", id: "form-email", class: "form-username form-control", placeholder: "Email" %>
