@@ -1,13 +1,10 @@
 <p>Hai <%= @resource.email %>,</p>
 
-<p>Akun Anda sudah terkunci karena beberapa kali gagal melakukan Log In.</p>
-
-<p>Klik tautan di bawah untuk membuka kunci akun Anda:</p>
-
-<p><%= link_to 'Buka Kunci Akun', unlock_url(@resource, unlock_token: @token) %></p>
+<div>Akun Anda sudah terkunci karena beberapa kali gagal melakukan Log In.</div>
+<div>Klik tautan di bawah untuk membuka kunci akun Anda:</div>
+<div><%= link_to 'Buka Kunci Akun', unlock_url(@resource, unlock_token: @token) %></div>
 
 <p>Terima Kasih.</p>
-<br>
-<br>
-<p>Salam,</p>
-<p>Job Care</p>
+
+<div>Salam,</div>
+<div><b><%= link_to "Job Care", "https://jobcare.id", target: "_blank" %></b></div>

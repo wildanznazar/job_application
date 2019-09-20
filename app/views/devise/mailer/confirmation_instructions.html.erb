@@ -1,11 +1,9 @@
 <p>Hai <%= @email %>,</p>
 
-<p>Anda dapat mengkonfirmasi akun Anda melalui tautan di bawah ini:</p>
-
-<p><%= link_to 'Konfirmasi Akun', confirmation_url(@resource, confirmation_token: @token) %></p>
+<div>Anda dapat mengkonfirmasi akun Anda melalui tautan di bawah ini:</div>
+<div><%= link_to 'Konfirmasi Akun', confirmation_url(@resource, confirmation_token: @token) %></div>
 
 <p>Terima Kasih.</p>
-<br>
-<br>
-<p>Salam,</p>
-<p>Job Care</p>
+
+<div>Salam,</div>
+<div><b><%= link_to "Job Care", "https://jobcare.id", target: "_blank" %></b></div>

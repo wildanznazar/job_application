@@ -1,13 +1,12 @@
 <p>Hai <%= @email %>,</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>Kami memberitahukan bahwa email Anda akan diubah ke <%= @resource.unconfirmed_email %>.</p>
+  <div>Kami memberitahukan bahwa email Anda akan diubah ke <%= @resource.unconfirmed_email %>.</div>
 <% else %>
-  <p>Kami memberitahukan bahwa email Anda sudah diubah ke <%= @resource.email %>.</p>
+  <div>Kami memberitahukan bahwa email Anda sudah diubah ke <%= @resource.email %>.</div>
 <% end %>
 
 <p>Terima Kasih.</p>
-<br>
-<br>
-<p>Salam,</p>
-<p>Job Care</p>
+
+<div>Salam,</div>
+<div><b><%= link_to "Job Care", "https://jobcare.id", target: "_blank" %></b></div>
