@@ -1,7 +1,7 @@
 <p>Hai <%= @company.name %>,</p>
 
-<div>Kandidat baru dengan email: <b><%= @user.email %></b> telah melamar di Lowongan Pekerjaan <b><%= link_to @job_ad.position_title, job_detail_url(id: @job_ad.id), target: "_blank" %></b>.</div>
-<div>Silahkan segera periksa kandidat baru Anda.</div>
+<div>Kandidat baru dengan email: <b><%= @user.email %></b> telah melamar di lowongan pekerjaan <b><%= link_to @job_ad.position_title, job_detail_url(id: @job_ad.id), target: "_blank" %></b>.</div>
+<div>Silahkan segera periksa kandidat baru Anda di sini: <b><%= link_to "Daftar Kandidat", "https://jobcare.id/admin/applicant" %></b>.</div>
 
 <p>Terima Kasih.</p>
 

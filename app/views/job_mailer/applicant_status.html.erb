@@ -1,3 +1,9 @@
-<p>Halo <%= @user.name %></p><br>
+<p>Hai <%= @user.name %>,</p>
 
-<p>Status lamaran kerja kamu sudah berubah </p>
+<div>Status lamaran Anda untuk lowongan pekerjaan: <b><%= link_to @job_ad.position_title, job_detail_url(id: @job_ad.id), target: "_blank" %></b> telah berubah.</div>
+<div>Untuk rinciannya silahkan periksa di sini: <b><%= link_to "Daftar Lamaran Pekerjaan", "https://jobcare.id/admin/applicant", target: "_blank" %></b>.</div>
+
+<p>Terima Kasih.</p>
+
+<div>Salam,</div>
+<div><b><%= link_to "Job Care", "https://jobcare.id", target: "_blank" %></b></div>

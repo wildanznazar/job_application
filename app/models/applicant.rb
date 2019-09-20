@@ -59,6 +59,12 @@ class Applicant < ApplicationRecord
     self.status = "Proses"
   end
 
+  after_update do
+    # if self.status_changed?
+      JobMailer.with(user_id: self.user_id, job_ad_id: self.job_ad_id).applicant_status.deliver_now
+    # end
+  end
+
   def applicant_user
     self.user.profiles.first.name
   end
