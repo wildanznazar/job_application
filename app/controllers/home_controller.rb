@@ -47,7 +47,7 @@ class HomeController < ApplicationController
 		#@type = params[:type] ||= []
 		#@type = [] if (params[:type].include? "Clear")
 		#@list_company = JobAd.search(params[:search]).where("true #{type}").order("created_at desc").page(params[:page])
-		@list_company = JobAd.search(params[:list]).order("created_at desc").page(params[:page])
+		@list_company = User.search(params[:search]).order("created_at desc").page(params[:page])
 	end
 
 	def job_detail

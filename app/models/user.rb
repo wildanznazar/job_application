@@ -139,4 +139,13 @@ class User < ApplicationRecord
   def label
     "asda"
   end
+
+  def self.search(search)
+    if search
+      self.joins(:user).where("address LIKE ? OR users.company_name LIKE ? ","%#{search}%", "%#{search}%")
+    else
+      all
+    end
+  end
+
 end

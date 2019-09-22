@@ -19,14 +19,16 @@
 						<% if !session[:company] %>
 							<li><a href="/browse_jobs">Pencarian Kerja</a></li>
 							<li><a href="/companies">Perusahaan</a></li>
+							<li><a href="/list_company">List Perusahaan</a></li>
+							<li><a href="/join">Cara Mendaftar</a></li>
 						<% else %>
 							<li><a href="/companies">Perusahaan</a></li>
 						<% end %>
 						<% if params[:controller] == "devise/sessions" %>
 							<li><a href="/auth/users/sign_up">Daftar</a></li>
-						<% else %>						
+						<% else %><!-- 						
 							<li><a href="/list_company">List Perusahaan</a></li>
-							<li><a href="/join">Cara Mendaftar</a></li>
+							<li><a href="/join">Cara Mendaftar</a></li> -->
 							<li><a href="/auth/users/sign_in">Masuk</a></li>
 						<% end %>
 					<% elsif user_signed_in? && current_user.role == CONFIG["company"] %>

@@ -27,20 +27,23 @@
 				<div class="row">
 					<div class="col-md-10 col-sm-10">
 						<div class="company-content">
-							<h3><%= list_company.user.name %></h3>
-							<p>
-							<span class="company-location">
-							<i class="fa fa-map-marker"></i><%= list_company.user.address %> </span>
+							<!-- < % if current_user.role == CONFIG["company"] %>-->
+							<h3><%= list_company.name %></h3>
+							<p><span class="company-location">
+							<i class="fa fa-map-marker"></i><%= list_company.address %> </span>
 							<span class="package">
-							<i class="fa fa-envelope"></i><%= list_company.user.email %></span>
+							<i class="fa fa-envelope"></i><%= list_company.email %></span>
 							<span class="package">
-							<i class="fa fa-phone-square"></i><%= list_company.user.phone %></span>
-						</p>
+							<i class="fa fa-phone-square"></i><%= list_company.phone %></span></p>
+						<!--< % end % >-->
+
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-2">
+						<%= form_with(url: "/browse_jobs", method: "get", local: true) do %>
 						<!--<button type="submit" class="btn view-job" name="View Job">View Job</button>-->
-						<%= link_to 'Lihat Lowongan' , browse_jobs_path(name: list_company.user.name), {class: 'btn view-job'} %>
+						<%= link_to 'Lihat Lowongan' , browse_jobs_path(name: list_company.name), {class: 'btn view-job'} %>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -52,4 +55,3 @@
 		</div>
 	</div>
 </section>
-
