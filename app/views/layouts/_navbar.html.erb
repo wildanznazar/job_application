@@ -24,7 +24,9 @@
 						<% end %>
 						<% if params[:controller] == "devise/sessions" %>
 							<li><a href="/auth/users/sign_up">Daftar</a></li>
-						<% else %>
+						<% else %>						
+							<li><a href="/list_company">List Perusahaan</a></li>
+							<li><a href="/join">Cara Mendaftar</a></li>
 							<li><a href="/auth/users/sign_in">Masuk</a></li>
 						<% end %>
 					<% elsif user_signed_in? && current_user.role == CONFIG["company"] %>
@@ -40,6 +42,7 @@
 								<li class="active"><a href="/admin/applicant">Lamaran Pekerjaan</a></li>
 							</ul>
 						</li>
+								<li><a href="/list_company">List Perusahaan</a></li>
 					<% elsif current_user.role == CONFIG["admin"] %>
 						<li><a href="/admin">Admin</a></li>
 					<% end %>

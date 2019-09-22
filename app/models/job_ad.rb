@@ -129,4 +129,12 @@ class JobAd < ApplicationRecord
     end
   end
 
+  def self.list(list)
+    if search
+      self.joins(:user).where("address LIKE ? OR users.company_name LIKE ? ","%#{search}%", "%#{search}%")
+    else
+      all
+    end
+  end
+
 end

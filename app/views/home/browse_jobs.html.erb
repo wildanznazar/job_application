@@ -87,29 +87,3 @@
 		</div>
 	</div>
 </section>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		<% if @type.include?"Clear" %>
-			('#type').clear();
-			window.history(null,null,'/browse_job')
-		<% else %>
-		  <% @type.each do |item| %>
-		  	$('#type').append('<input type="hidden" id="type_<%= item %>" name="type[]" value="<%= item %>">');
-		  <% end %>
-		<% end %>
-	});
-
-	function submit_type(value) {
-		if(value!=='Clear') {
-			var el =document.getElementById("type_"+value);
-
-			if (typeof(el) === 'undefined' || el === null){
-	      $('#type').append('<input type="hidden" id="type_'+value+'" name="type[]" value="'+value+'">');  
-	    }
-		} else {
-			$('#type').append('<input type="hidden" id="type_'+value+'" name="type[]" value="'+value+'">');
-		}
-		$("#form1").submit();
-	}
-</script>

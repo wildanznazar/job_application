@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_09_20_051156) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.integer "company_id"
-    t.boolean "cancel", default: false
     t.index ["job_ad_id"], name: "index_applicants_on_job_ad_id"
     t.index ["user_id"], name: "index_applicants_on_user_id"
   end
@@ -61,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_051156) do
     t.string "employment_type"
     t.string "job_specialization"
     t.string "work_location"
-    t.bigint "monthly_salary"
+    t.bigint "monthly_salary", default: 0
     t.string "education_level"
     t.string "field_of_studies"
     t.string "years_of_experience"
