@@ -19,6 +19,7 @@
 		</div>
 	</div>
 </section>
+
 <section class="jobs">
 	<div class="container">
 		<div class="row top-pad">
@@ -86,7 +87,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+	</section>
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -99,11 +100,9 @@
 		  <% end %>
 		<% end %>
 	});
-
 	function submit_type(value) {
 		if(value!=='Clear') {
 			var el =document.getElementById("type_"+value);
-
 			if (typeof(el) === 'undefined' || el === null){
 	      $('#type').append('<input type="hidden" id="type_'+value+'" name="type[]" value="'+value+'">');  
 	    }

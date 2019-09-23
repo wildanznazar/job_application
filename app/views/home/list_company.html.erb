@@ -1,0 +1,57 @@
+
+<section class="main-banner-custom" style="background:#242c36 url(/assets/slider-01.jpg) no-repeat">
+	<div class="container">
+		<div class="caption">
+			<form id="form1">
+				<div id="type"></div>
+				<fieldset>
+					<div class="col-md-10 col-sm-10 no-pad">
+						<!--<input type="text" class="form-control border-right" placeholder="Posisi, Keahlian, Perusahaan" />-->
+						<%= text_field_tag :search, params[:search], class: 'form-control', autofocus: true, placeholder: "Cari Perusahaan" %>
+
+					</div>
+					<div class="col-md-2 col-sm-2 no-pad">
+						<%= submit_tag "Cari", class: 'btn seub-btn'%>
+						<!--<input type="submit" class="btn seub-btn" value="Cari" />-->
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</section>
+<section class="jobs">
+	<div class="container">		
+		<div class="companies">
+			<% @list_company.each do |list_company| %>
+			<div class="company-list">
+				<div class="row">
+					<div class="col-md-10 col-sm-10">
+						<div class="company-content">
+							<!-- < % if current_user.role == CONFIG["company"] %>-->
+							<h3><%= list_company.name %></h3>
+							<p><span class="company-location">
+							<i class="fa fa-map-marker"></i><%= list_company.address %> </span>
+							<span class="package">
+							<i class="fa fa-envelope"></i><%= list_company.email %></span>
+							<span class="package">
+							<i class="fa fa-phone-square"></i><%= list_company.phone %></span></p>
+						<!--< % end % >-->
+
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-2">
+						<%= form_with(url: "/browse_jobs", method: "get", local: true) do %>
+						<!--<button type="submit" class="btn view-job" name="View Job">View Job</button>-->
+						<%= link_to 'Lihat Lowongan' , browse_jobs_path(name: list_company.name), {class: 'btn view-job'} %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+
+			<div class="row">
+				<center><%= paginate @list_company %></center>
+			</div>
+		</div>
+	</div>
+</section>

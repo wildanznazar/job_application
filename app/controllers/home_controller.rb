@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail]
-	authorize_resource :class => false, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail]
+	before_action :authenticate_user!, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail, :list_company, :join]
+	authorize_resource :class => false, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail, :list_company, :join]
 
 	def index
 		if user_signed_in?
@@ -16,6 +16,10 @@ class HomeController < ApplicationController
 
 	def companies
 		session[:company] = true
+		render layout: "companies"
+	end
+
+	def join
 		render layout: "companies"
 	end
 
@@ -36,6 +40,14 @@ class HomeController < ApplicationController
 		@type = params[:type] ||= []
 		@type = [] if (params[:type].include? "Clear")
 		@browse_jobs = JobAd.search(params[:search]).where("true #{type}").order("created_at desc").page(params[:page])
+	end
+
+	def list_company
+		#type = "and employment_type in (#{params[:type].map{ |i|  %Q('#{i}') }.join(',')})" if params[:type].present? && !(params[:type].include? "Clear")
+		#@type = params[:type] ||= []
+		#@type = [] if (params[:type].include? "Clear")
+		#@list_company = JobAd.search(params[:search]).where("true #{type}").order("created_at desc").page(params[:page])
+		@list_company = User.search(params[:search]).order("created_at desc").page(params[:page])
 	end
 
 	def job_detail
