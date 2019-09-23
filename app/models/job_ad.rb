@@ -123,7 +123,7 @@ class JobAd < ApplicationRecord
 
   def self.search(search)
     if search
-      self.joins(:user).where("position_title LIKE ? OR users.company_name LIKE ? OR skills LIKE ?","%#{search}%", "%#{search}%", "%#{search}%")
+      self.joins(:user).where("uppper(position_title) LIKE ? OR upper(users.name) LIKE ? OR upper(skills) LIKE ?","%#{search.upcase}%", "%#{search.upcase}%", "%#{search.upcase}%")
     else
       all
     end

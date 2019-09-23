@@ -42,7 +42,7 @@
 					<div class="col-md-2 col-sm-2">
 						<%= form_with(url: "/browse_jobs", method: "get", local: true) do %>
 						<!--<button type="submit" class="btn view-job" name="View Job">View Job</button>-->
-						<%= link_to 'Lihat Lowongan' , browse_jobs_path(name: list_company.name), {class: 'btn view-job'} %>
+						<%= link_to 'Lihat Lowongan' , browse_jobs_path(search: list_company.name), {class: 'btn view-job'} %>
 						<% end %>
 					</div>
 				</div>

@@ -142,7 +142,7 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search
-      self.joins(:user).where("address LIKE ? OR users.company_name LIKE ? ","%#{search}%", "%#{search}%")
+      self.where("upper(name) LIKE ? ", "%#{search.upcase}%")
     else
       all
     end
