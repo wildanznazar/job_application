@@ -16,4 +16,14 @@ class JobMailer < ApplicationMailer
 
     mail(to: @user.email, subject: subject)
   end
+
+  def contact
+    @name = params[:name]
+    @message = params[:message]
+    @email = params[:email]
+    email_with_name = %("Pesan Dari User" <#{@email}>)
+    subject = "Pesan Dari #{@name}"
+
+    mail(from: email_with_name, to: "a.cadangan90@gmail.com", subject: subject)
+  end
 end

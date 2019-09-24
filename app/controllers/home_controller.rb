@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail, :list_company, :join]
-	authorize_resource :class => false, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail, :list_company, :join]
+	before_action :authenticate_user!, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail, :list_company, :join, :contact]
+	authorize_resource :class => false, except: [:index, :companies, :job_ad, :browse_jobs, :job_detail, :list_company, :join, :contact]
 
 	def index
 		if user_signed_in?
@@ -85,6 +85,12 @@ class HomeController < ApplicationController
         format.html { redirect_to job_detail_url(id: @applicant.job_ad_id), alert: @applicant.errors.full_messages.to_sentence }
       end
     end
+	end
+
+	def contact
+		JobMailer.with(name: params[:name], email: params[:email], message: params[:message]).contact.deliver_now
+		flash[:notice] = "Pesan berhasil dikirim."
+		redirect_back(fallback_location: root_path, notice: "Pesan berhasil dikirim.")
 	end
 
   private

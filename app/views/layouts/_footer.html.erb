@@ -48,12 +48,12 @@
 
 		<div class="col-md-4 col-sm-12">
 			<h4>Hubungi Kami</h4>
-			<form>
-				<input type="text" class="form-control input-lg" placeholder="Nama">
-				<input type="text" class="form-control input-lg" placeholder="Email">
-				<textarea class="form-control" placeholder="Pesan"></textarea>
-				<button type="submit" class="btn btn-primary">Kirim</button>
-			</form>
+			<%= form_with(url: contact_path, method: :post, local: true) do %>
+				<input type="text" class="form-control input-lg" name="name" placeholder="Nama" required="true">
+				<input type="text" class="form-control input-lg" name="email" placeholder="Email" required="true">
+				<textarea class="form-control" name="message" placeholder="Pesan" required="true"></textarea>
+				<button type="submit" class="btn btn-primary" data-disable-with="Proses...">Kirim</button>
+			<% end %>
 		</div>
 
 

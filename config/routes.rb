@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/applicant', to: 'home#applicant', as: 'applicant'
   get '/apply_page', to: 'home#apply_page', as: 'apply_page'
   post '/apply', to: 'home#apply', as: 'apply'
+  post '/contact', to: 'home#contact', as: 'contact'
 
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

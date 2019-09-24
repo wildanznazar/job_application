@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no_replay@jobcare.id'
+  default from: %("Job Care" <no_replay@jobcare.id>)
   layout 'mailer'
 end
