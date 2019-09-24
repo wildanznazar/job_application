@@ -85,3 +85,5 @@ gem 'kaminari'
 gem 'toastr-rails'
 
 gem "paperclip", "~> 6.0.0"
+
+gem 'meta-tags'

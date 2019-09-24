@@ -82,6 +82,15 @@ width:100%;
 .main-banner-custom .caption{
 	position:relative;
 }
+
+.main-banner-custom h1{
+	color:#ffff;
+	font-weight:400;
+	display: block;
+	margin-bottom: 25px;
+	padding-top: 10px;
+}
+
 .main-banner-custom h2{
 	color:#ffff;
 	font-weight:400;
@@ -193,6 +202,14 @@ color:#404b4d;
 	width:200px;
 }
 
+.basic-information-custom h1{
+	margin:0;
+	color:#404b4d;
+	text-align: center;
+	font-size: 36px;
+	line-height: 48px;
+}
+
 .basic-information-custom h2{
 	margin:0;
 	color:#404b4d;
@@ -233,7 +250,11 @@ color:#404b4d;
 
 
 @media only screen and (min-width: 768px){
-	.main-banner-custom h2{
+	.main-banner-custom h1{
+	font-size:82px;
+}
+
+.main-banner-custom h2{
 	font-size:82px;
 }
 }
