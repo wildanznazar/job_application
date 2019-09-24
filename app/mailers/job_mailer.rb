@@ -24,6 +24,6 @@ class JobMailer < ApplicationMailer
     email_with_name = %("Pesan Dari User" <#{@email}>)
     subject = "Pesan Dari #{@name}"
 
-    mail(from: email_with_name, to: "a.cadangan90@gmail.com", subject: subject)
+    mail(from: email_with_name, to: Setting.first.email, subject: subject)
   end
 end
