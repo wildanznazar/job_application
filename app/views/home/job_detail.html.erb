@@ -139,6 +139,21 @@
 							<%= link_to 'Kembali' , browse_jobs_path, {class: 'btn btn-default btn-apply'} %>
 						<% end %>
 					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class=""></i> <br>
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="row">
+								<span><div class="col-lg-6 col-md-6 col-sm-6 col-xs-0 text-left">Dipublikasikan: <%= @job_detail.created_at %></div></span>
+								<span><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">Berakhir pada: <%= @job_detail.ad_period %></div></span>
+							</div>
+						</div>
+						
+					</div>
+
 				</div>
 			</div>
 		</div>

@@ -72,13 +72,24 @@
 					<div class="col-md-10 col-sm-10">
 						<div class="company-content">
 							<h3><%= browse_job.position_title %></h3>
-							<p><span class="company-name"><i class="fa fa-building"></i><%= browse_job.user.name %></span><span class="company-location"><i class="fa fa-map-marker"></i> <%= browse_job.work_location %> </span><span class="package"><i class="fa fa-money"></i><%= currency(browse_job.monthly_salary) %></span></p>
+							<p>
+							<span class="company-name"><i class="fa fa-building"></i><%= browse_job.user.name %></span>
+							<span class="company-location"><i class="fa fa-map-marker"></i> <%= browse_job.work_location %> </span>
+							<span class="package"><i class="fa fa-money"></i><%= currency(browse_job.monthly_salary) %></span>
+						</p>
 						</div>
+
+						<div class="company-content">
+							<p><span class="package"><i class="fa fa-calendar"></i><%= browse_job.created_at %></span>
+						</p>
+						</div>
+
 					</div>
 					<div class="col-md-2 col-sm-2">
 						<!--<button type="submit" class="btn view-job" name="View Job">View Job</button>-->
 						<%= link_to 'Lihat Pekerjaan' , job_detail_path(id: browse_job.id), {class: 'btn view-job'} %>
 					</div>
+
 				</div>
 			</div>
 			<% end %>
